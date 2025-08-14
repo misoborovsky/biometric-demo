@@ -4,3 +4,4 @@ tests/__pycache__
 .env
 utils/__pycache__
 pages/__pycache__
+__pycache__
