@@ -1,0 +1,26 @@
+name: Run Playwright Tests
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Ensure browsers are installed
+        run: python -m playwright install --with-deps
+      - name: Run tests
+        run: pytest -s -v --headed --html=reports/report.html --self-contained-html --tracing=retain-on-failure
+      - name: Send test report via email
+        run: python utils/send_report.py
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-traces
+          path: test-results/
