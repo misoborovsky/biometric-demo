@@ -13,3 +13,13 @@ Testovanie jazykových mutácií
     - po načítaní stránky uložíme do premennej aktuálnu hodnotu zvolenej jazykovej mutácie
     - refreshneme stránku
     - overíme, že po opätovnom načítaní je stále zvolená rovnaká jazyková mutácia
+
+
+CI/CD:
+- Jednoduchý Github Action workflow, ktorý spustí všetky testy po mergi do Main branche
+
+Reporty:
+- Implementovaná python knižnica na generovanie jednoduchých HTML reportov
+
+Notifikácie:
+- Implementovaná logika na odosielanie vygenerovaného reportu na email ( na testovanie použitý Mailtrap )
