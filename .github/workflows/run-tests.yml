@@ -9,6 +9,8 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
