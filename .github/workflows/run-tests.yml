@@ -1,3 +1,6 @@
+env:
+  MAILTRAP_USER: ${{ secrets.MAILTRAP_USER }}
+  MAILTRAP_PASS: ${{ secrets.MAILTRAP_PASS }}
 name: Run Playwright Tests
 on:
   push:
