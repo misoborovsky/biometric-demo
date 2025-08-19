@@ -1,4 +1,4 @@
-"# biometric-demo" 
+# **biometric-demo**
 
 Spustenie testov pomocou prikazu:
 pytest -s -v --headed --html=reports/report.html --self-contained-html --tracing=retain-on-failure
