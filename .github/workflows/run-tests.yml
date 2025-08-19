@@ -18,7 +18,7 @@ jobs:
       - name: Ensure browsers are installed
         run: python -m playwright install --with-deps
       - name: Run tests
-        run: pytest -s -v --headed --html=reports/report.html --self-contained-html --tracing=retain-on-failure
+        run: pytest -s -v --html=reports/report.html --self-contained-html --tracing=retain-on-failure
       - name: Send test report via email
         run: python utils/send_report.py
       - uses: actions/upload-artifact@v4
